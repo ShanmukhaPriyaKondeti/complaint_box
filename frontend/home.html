@@ -16,7 +16,7 @@
       <ul>
         <li><a href="#">Home</a></li>
         <li><a href="#submit">Submit</a></li>
-        <li><a href="#">Track status</a></li>
+        <li><a href="#track">Track status</a></li>
         <li><a href="#about">About</a></li>
         
         <!-- Dropdown Menu -->
@@ -29,7 +29,6 @@
           </div>
         </li>
         
-        <li><a href="login.html" class="btn login-btn">Login</a></li>
       </ul>
     </nav>
   </div>
@@ -81,6 +80,30 @@
       <button type="submit" class="btn">Submit</button>
     </form>
     <p id="responseMessage"></p>
+  </div>
+</section>
+
+<section id="track" class="track-status">
+  <h2>Track Complaint Status</h2>
+  <form id="trackForm">
+    <div class="form-group">
+      <label for="trackID">Enter Complaint ID or Phone Number:</label>
+      <input type="text" id="trackID" name="trackID" required placeholder="e.g., CMP123456 or 9876543210" />
+    </div>
+    <div class="form-group">
+      <button type="submit">Track Status</button>
+    </div>
+  </form>
+
+  <!-- Sample status card (you can dynamically show/hide this using JS after fetch) -->
+  <div class="status-card" id="statusCard">
+    <h3>Complaint Details</h3>
+    <p><strong>Complaint ID:</strong> CMP123456</p>
+    <p><strong>Type:</strong> Road</p>
+    <p><strong>Region:</strong> Sector 12, Mumbai</p>
+    <p><strong>Description:</strong> Potholes causing traffic</p>
+    <p><strong>Status:</strong> <span class="status in-progress">In Progress</span></p>
+    <p><strong>Last Updated:</strong> 17 July 2025</p>
   </div>
 </section>
 
@@ -142,6 +165,13 @@
     if (slideIndex > slides.length) { slideIndex = 1 }
     slides[slideIndex - 1].style.display = "block";
     setTimeout(showSlides, 3000); // Change image every 3 seconds
+
+    document.getElementById('trackForm').addEventListener('submit', function (e) {
+  e.preventDefault();
+  // Fetch and display complaint status here
+  document.getElementById('statusCard').style.display = 'block';
+});
+
   }
 </script>
 

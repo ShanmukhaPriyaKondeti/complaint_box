@@ -16,7 +16,7 @@ nav ul a:hover { text-decoration: underline; }
 .hero {
   background: linear-gradient(rgba(24, 55, 75, 0.6), rgba(24, 55, 75, 0.6)),
     url('https://source.unsplash.com/1600x400/?city,public') center/cover;
-  color: #ea650c;
+  color: #e8e4e1;
   padding: 4rem 1rem;
   text-align: center;
 }
@@ -222,7 +222,8 @@ img {
 .logo {
   font-size: 1.8rem;
   font-weight: bold;
-  margin-left: 0%;
+  margin: 0px;
+  text-align: left;
 }
 
 .nav-container {
@@ -230,6 +231,7 @@ img {
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
+  padding: 0 20px;
 }
 
 .slideshow {
@@ -240,4 +242,59 @@ img {
 
 .slides {
   display: none;
+}
+
+.track-status {
+  background-color: #eef2f5;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.track-status h2 {
+  margin-bottom: 20px;
+}
+
+.track-status form {
+  width: 100%;
+  max-width: 500px;
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+.status-card {
+  width: 100%;
+  max-width: 500px;
+  background-color: #ffffff;
+  border-left: 6px solid #0077aa;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+}
+
+.status-card p {
+  margin: 8px 0;
+}
+
+.status {
+  padding: 4px 10px;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+}
+
+.status.in-progress {
+  background-color: #ffaa00;
+}
+
+.status.resolved {
+  background-color: #28a745;
+}
+
+.status.pending {
+  background-color: #dc3545;
 }
