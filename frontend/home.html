@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI-Powered Complaint & Suggestion Hub</title>
+  <link rel="stylesheet" href="home.css">
+  
+</head>
+<body>
+
+<header>
+  <div class="container nav-container">
+    <div class="logo">Civix</div>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#submit">Submit</a></li>
+        <li><a href="#">Track status</a></li>
+        <li><a href="#about">About</a></li>
+        
+        <!-- Dropdown Menu -->
+        <li class="dropdown">
+          <a href="#">Menu ▼</a>
+          <div class="dropdown-content">
+            <a href="#">Complaints</a>
+            <a href="#">Chats</a>
+            <a href="#">Settings</a>
+          </div>
+        </li>
+        
+        <li><a href="login.html" class="btn login-btn">Login</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- your existing hero section, submit form, how-it-works, about section remain the same -->
+  
+<section class="hero">
+  <div class="container slideshow">
+    <div class="slides fade">
+      <img src="https://media.istockphoto.com/id/1052187814/photo/group-of-young-people-cleaning-park-area.jpg?s=612x612&w=0&k=20&c=0jM8Ep-QgRjBJbDi5rft3ARF-e2xfzI1pfZt_x2-O8c=" alt="Slide 1">
+    </div>
+    <div class="slides fade">
+      <img src="https://media.istockphoto.com/id/1160028767/photo/grandfather-and-granddaughter-recycling.jpg?s=612x612&w=0&k=20&c=NgrexYFT60O3rcqgQXD0vZIh80_ed1H6AmpLpvfiL5g=" alt="Slide 2">
+    </div>
+    <div class="slides fade">
+      <img src="https://media.istockphoto.com/id/1575889410/photo/collection-of-fallen-leaves-raking-autumn-leaves-from-the-lawn-on-the-lawn-in-the-autumn-park.jpg?s=612x612&w=0&k=20&c=xFRi53mRShbokY2OoncfCioCbJIqnkBAEj_juSed0g4=" alt="Slide 3">
+    </div>
+    <div class="hero-text">
+      <h2>Have a complaint or suggestion?</h2>
+      <p>Our AI will help direct it to the right place and keep you updated on responses.</p>
+      <a href="#submit" class="btn">Submit Now</a>
+    </div>
+  </div>
+</section>
+
+<section id="submit" class="submit-section">
+  <div class="container">
+    <h2>Submit Your Issue</h2>
+    <form id="issueForm">
+      <label for="category">Category</label>
+      <select id="category" name="category" required>
+        <option value="">-- Select Category --</option>
+        <option value="roads">Roads</option>
+        <option value="transport">Transport</option>
+        <option value="healthcare">Healthcare</option>
+        <option value="other">Other</option>
+      </select>
+
+      <label for="description">Description</label>
+      <textarea id="description" name="description" rows="4" placeholder="Describe your issue..." required></textarea>
+
+      <label for="location">Location (optional)</label>
+      <input type="text" id="location" name="location" placeholder="e.g., Street name, City">
+      <label for="photo">Attach Photo (optional)</label>
+      <input type="file" id="photo" name="photo" accept="image/*">
+
+      <button type="submit" class="btn">Submit</button>
+    </form>
+    <p id="responseMessage"></p>
+  </div>
+</section>
+
+<section class="how-it-works">
+  <h2>How It Works</h2>
+  <p>AI-powered complaint resolution in 4 simple steps</p>
+  <div class="steps">
+    <div class="step">
+      <div class="circle">1</div>
+      <h3>Submit Issue</h3>
+      <p>Report your complaint or suggestion through our simple form</p>
+    </div>
+    <div class="step">
+      <div class="circle">2</div>
+      <h3>AI Analysis</h3>
+      <p>Our AI automatically categorizes and analyzes your issue</p>
+    </div>
+    <div class="step">
+      <div class="circle">3</div>
+      <h3>Smart Routing</h3>
+      <p>Issue is routed to the appropriate department or authority</p>
+    </div>
+    <div class="step">
+      <div class="circle">4</div>
+      <h3>Track Progress</h3>
+      <p>Monitor the status and receive updates on your issue</p>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="about-section">
+  <div class="container">
+    <h2>About This Platform</h2>
+    <p>At Civix, we believe every voice deserves to be heard...
+      <!-- your existing about text -->
+    </p>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container">
+    <p>&copy; 2025 AI Complaint Hub. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="a.js"></script>
+
+<script>
+  let slideIndex = 0;
+  showSlides();
+
+  function showSlides() {
+    const slides = document.getElementsByClassName("slides");
+    for (let i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) { slideIndex = 1 }
+    slides[slideIndex - 1].style.display = "block";
+    setTimeout(showSlides, 3000); // Change image every 3 seconds
+  }
+</script>
+
+</body>
+</html>
