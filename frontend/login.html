@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Navbar with Login/Signup</title>
+  <link rel="stylesheet" href="login.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">🌟 MyWebsite</div>
+    <div class="nav-items">
+      <a class="nav-link" href="#"><i class="fas fa-globe"></i> Language</a>
+      <a class="nav-link" href="#"><i class="fas fa-circle-question"></i> Help Center</a>
+      <button class="login-btn" onclick="toggleLogin()">Login</button>
+    </div>
+  </nav>
+
+  <!-- Login Form -->
+  <section class="login-section" id="loginForm">
+    <div class="login-box">
+      <h2>Welcome Back 👋</h2>
+      <input type="text" placeholder="Email or Username" />
+      <input type="password" placeholder="Password" />
+      <button class="submit-btn">Login</button>
+      <p class="signup-text">Don't have an account? <a href="#" onclick="toggleForm('signup')">Sign up</a></p>
+    </div>
+  </section>
+
+  <!-- Signup Form -->
+  <section class="login-section" id="signupForm">
+    <div class="login-box">
+      <h2>Create Account </h2>
+      <input type="text" placeholder="Username" />
+      <input type="text" placeholder="Email or Phone Number" />
+      <input type="password" placeholder="Password" />
+      <input type="password" placeholder="confirm Password" />
+      <button class="submit-btn">Sign Up</button>
+      <p class="signup-text">Already have an account? <a href="#" onclick="toggleForm('login')">Login</a></p>
+    </div>
+  </section>
+
+  <!-- JavaScript -->
+  <script>
+    function toggleLogin() {
+      document.getElementById('loginForm').classList.toggle('visible');
+      document.getElementById('signupForm').classList.remove('visible');
+    }
+
+    function toggleForm(target) {
+      if (target === 'signup') {
+        document.getElementById('loginForm').classList.remove('visible');
+        document.getElementById('signupForm').classList.add('visible');
+        document.getElementById('signupForm').scrollIntoView({ behavior: 'smooth' });
+      } else {
+        document.getElementById('signupForm').classList.remove('visible');
+        document.getElementById('loginForm').classList.add('visible');
+        document.getElementById('loginForm').scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  </script>
+
+</body>
+</html>
